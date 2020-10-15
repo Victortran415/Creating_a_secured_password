@@ -14,8 +14,15 @@ function createPassword() {
 
   if (lengthOfPw === false) {
     alert("Must have a value");
+
   } else if (lengthOfPw < 8 || lengthOfPw > 128) {
     lengthOfPw = parseInt(prompt("Must be in the range between 8 and 128 characters"))
+
+  } else {
+    var wantSymbols = confirm("Would you like SYMBOLS in your password?")
+    var wantNum = confirm("Would you like NUMBERS in your password?")
+    var wantUpperLet = confirm("Would you like UPPERCASE LETTER in your password?")
+    var wantLowerLet = confirm("Would you like LOWERCASE LETTERS in your password?")
   }
 }
 
