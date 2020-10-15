@@ -27,19 +27,49 @@ function createPassword() {
     if (wantSymbols === false && wantNum === false && wantUpperLet === false && wantLowerLet === false) {
       alert("Password must contain at least ONE criteria")
     }
+
+    // Need to redo this part
+    var password = []
+      
+    if (wantSymbols) {
+      password.push(symbols[i])
+      console.log(password)
+    }
+    if (wantNum) {
+      password.push(num);
+      console.log(password)
+    }  
+    if (wantLowerLet) {
+      password.push(lowLetter);
+      console.log(password)
+    }
+    if (wantUpperLet) {
+      password.push(UppLetter)
+      console.log(password)
+    }
   }
+
+  // random password <--- may need to rework
+  var randomPW = []
+  for (var i = 0; i < lengthOfPw; i++) {
+    var generatedPW = password[Math.floor(Math.random() * password.length)];
+    randomPW.push(generatedPW);
+  }
+  return randomPW
 }
+
+
 
 // Write password to the #password input
 // function writePassword() {
-//   var password = generatePassword();
+//   var password = generateRandom();
 //   var passwordText = document.querySelector("#password");
 
 //   passwordText.value = password;
 // }
 
 function copyToClipboard() {
-  document.getElementById("password");
+  document.getElementById("password")
   alert("Your password has been copied to clipboard")
 }
 
