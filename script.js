@@ -22,7 +22,7 @@ function createPassword() {
     alert("Must be in the range between 8 and 128 characters")
 
   } else {
-    //Do you want these certain characters in your password? 
+    // create confirm to see if you want these certain variables in your PW
     var wantSymbols = confirm("Would you like SYMBOLS in your password?")
     var wantNum = confirm("Would you like NUMBERS in your password?")
     var wantUpperLet = confirm("Would you like UPPERCASE LETTER in your password?")
@@ -63,11 +63,12 @@ function createPassword() {
 }
 
 // added this function to copy PW
-function copyToClipboard() { // <-- This function is not working..
-  document.execCommand("copyToClipboard")
+var copyPassBtn = document.querySelector("#copyPW");
+function copyToClipboard() { 
+  addPwIntoBox.select()
+  document.execCommand("Copy")
   alert("Your password has been copied to clipboard")
 }
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", createPassword);
