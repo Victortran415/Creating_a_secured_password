@@ -1,5 +1,6 @@
 var generateBtn = document.querySelector("#generate");
 var copyPassBtn = document.querySelector("#copyPW");
+var addPwIntoBox = document.querySelector("#password")
 
 
 // Variables for passwords
@@ -27,7 +28,7 @@ function createPassword() {
     var wantUpperLet = confirm("Would you like UPPERCASE LETTER in your password?")
     var wantLowerLet = confirm("Would you like LOWERCASE LETTERS in your password?")
 
-    // If confirmed YES/OK then push variables into Password
+    // If confirmed YES/OK push variable into Password, else continue to next variable
     var password = []
     if (wantSymbols === true) {
       password.push(symbols)
@@ -42,7 +43,6 @@ function createPassword() {
       password.push(num)
     }
 
-    
     var randomPW = ""
 
     while (randomPW.length < lengthOfPw) {
@@ -54,12 +54,13 @@ function createPassword() {
       }
     }
     console.log(randomPW)
+    addPwIntoBox.textContent = randomPW
   }
 }
 
 // added this function to copy PW
 function copyToClipboard() {
-  copyPassBtn.select()
+  copyPassBtn.select(); // <-- This function is not working..
   document.execCommand("copyToClipboard")
   alert("Your password has been copied to clipboard")
 }
