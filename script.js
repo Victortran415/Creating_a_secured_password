@@ -1,22 +1,22 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
-var copyPassBtn = document.querySelector("#copy");
+var copyPassBtn = document.querySelector("#copyPW");
 
+
+// Variables for passwords
 var symbols = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 var num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var lowLetter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-var UppLetter = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var uppLetter = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 
 function createPassword() {
   var lengthOfPw = parseInt(prompt("How long would you like your password to be? Must be between 8 & 128 characters"));
 
-  if (lengthOfPw === false) {
+  if (lengthOfPw === false) { // <<< not working, need fixing
     alert("Must have a value");
-
-  } else if (lengthOfPw < 8 || lengthOfPw > 128) {
-    lengthOfPw = parseInt(prompt("Must be in the range between 8 and 128 characters"))
+  }
+  if (lengthOfPw < 8 || lengthOfPw > 128 || isNaN(length)) {
+    alert("Must be in the range between 8 and 128 characters")
 
   } else {
     var wantSymbols = confirm("Would you like SYMBOLS in your password?")
@@ -24,55 +24,44 @@ function createPassword() {
     var wantUpperLet = confirm("Would you like UPPERCASE LETTER in your password?")
     var wantLowerLet = confirm("Would you like LOWERCASE LETTERS in your password?")
 
-    if (wantSymbols === false && wantNum === false && wantUpperLet === false && wantLowerLet === false) {
-      alert("Password must contain at least ONE criteria")
-    }
-
-    // Need to redo this part
+    // If confirmed YES/OK then push variables into Password
     var password = []
-      
-    if (wantSymbols) {
-      password.push(symbols[i])
-      console.log(password)
+    if (wantSymbols === true) {
+      password.push(symbols)
     }
-    if (wantNum) {
-      password.push(num);
-      console.log(password)
-    }  
-    if (wantLowerLet) {
+    if (wantUpperLet === true) {
+      password.push(uppLetter)
+    }
+    if (wantLowerLet === true) {
       password.push(lowLetter);
-      console.log(password)
     }
-    if (wantUpperLet) {
-      password.push(UppLetter)
-      console.log(password)
+    if (wantNum === true) {
+      password.push(num)
     }
-  }
 
-  // random password <--- may need to rework
-  var randomPW = []
-  for (var i = 0; i < lengthOfPw; i++) {
-    var generatedPW = password[Math.floor(Math.random() * password.length)];
-    randomPW.push(generatedPW);
+    
+    var randomPW = ""
+
+    while (randomPW.length < lengthOfPw) {
+      for (var i = 0; i < password.length; i++) {
+        if (randomPW.length < lengthOfPw) {
+          var generatedPW = Math.floor(Math.random() * password[i].length);
+          randomPW += password[i][generatedPW]
+        }
+      }
+    }
+    console.log(randomPW)
   }
-  return randomPW
 }
 
-
-
-// Write password to the #password input
-// function writePassword() {
-//   var password = generateRandom();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-// }
-
+// added this function to copy PW
 function copyToClipboard() {
-  document.getElementById("password")
+  copyPassBtn.select()
+  document.execCommand("copyToClipboard")
   alert("Your password has been copied to clipboard")
 }
 
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", createPassword);
-copyPassBtn.addEventListener("click", copyToClipboard)
+copyPassBtn.addEventListener("click", copyToClipboard);
