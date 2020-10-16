@@ -6,9 +6,11 @@ This application was created to generate a secure password for Users by HTML, CS
 
 For the application to run the User must meet some criterias:
   1. The length of the password must be between 8 - 128 characters long.
+
     - If User click cancel or does not meet the length requirement, they will be asked to "Try again"
   
   2. Password must have at least ONE of the characters:
+
     - Special characters (Symbols),
     - Numbers,
     - Lowercase Letters,
@@ -16,3 +18,13 @@ For the application to run the User must meet some criterias:
     - Emojois
 
     - If User does not choose one, they will be asked to "Try again"
+
+
+GitHub Page:
+  https://victortran415.github.io/Creating_a_secured_password/
+
+Repo Page:
+  https://github.com/Victortran415/Creating_a_secured_password
+
+Page to my screenshots:
+  https://github.com/Victortran415/Creating_a_secured_password/issues/1
