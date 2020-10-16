@@ -10,6 +10,8 @@ var uppLetter = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 
 
 function createPassword() {
+
+  // identify how long you want the password to be.
   var lengthOfPw = parseInt(prompt("How long would you like your password to be? Must be between 8 & 128 characters"));
 
   if (lengthOfPw === false) { // <<< not working, need fixing
@@ -19,6 +21,7 @@ function createPassword() {
     alert("Must be in the range between 8 and 128 characters")
 
   } else {
+    //Do you want these certain characters in your password? 
     var wantSymbols = confirm("Would you like SYMBOLS in your password?")
     var wantNum = confirm("Would you like NUMBERS in your password?")
     var wantUpperLet = confirm("Would you like UPPERCASE LETTER in your password?")
