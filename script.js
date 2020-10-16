@@ -28,6 +28,10 @@ function createPassword() {
     var wantUpperLet = confirm("Would you like UPPERCASE LETTER in your password?")
     var wantLowerLet = confirm("Would you like LOWERCASE LETTERS in your password?")
 
+    // Must pick at least one, in order to generate password
+    if (!wantSymbols && !wantNum && !wantUpperLet && !wantLowerLet ) {
+      alert("Must pick at least one criteria")
+    }
     // If confirmed YES/OK push variable into Password, else continue to next variable
     var password = []
     if (wantSymbols === true) {
@@ -59,8 +63,7 @@ function createPassword() {
 }
 
 // added this function to copy PW
-function copyToClipboard() {
-  copyPassBtn.select(); // <-- This function is not working..
+function copyToClipboard() { // <-- This function is not working..
   document.execCommand("copyToClipboard")
   alert("Your password has been copied to clipboard")
 }
