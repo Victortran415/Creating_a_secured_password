@@ -17,22 +17,22 @@ function createPassword() {
   // identify how long you want the password to be.
   var lengthOfPw = parseInt(prompt("How long would you like your password to be? Must be between 8 & 128 characters"));
 
-  if (!lengthOfPw) { // <<< not working, need fixing
-    alert("Must have a value");
+  if (!lengthOfPw) { // <-- if you hit cancel, function will not begin to generate PW
+    alert("Must have a value. Try again");
   } else if (lengthOfPw < 8 || lengthOfPw > 128 || isNaN(length)) {
-    alert("Must be in the range between 8 and 128 characters")
+    alert("Must be in the range between 8 and 128 characters. Try again")
   
   } else {
     // create confirm to see if you want these certain variables in your PW
     var wantSymbols = confirm("Would you like SYMBOLS in your password?")
     var wantNum = confirm("Would you like NUMBERS in your password?")
-    var wantUpperLet = confirm("Would you like UPPERCASE LETTER in your password?")
+    var wantUpperLet = confirm("Would you like UPPERCASE LETTERS in your password?")
     var wantLowerLet = confirm("Would you like LOWERCASE LETTERS in your password?")
     var wantEmoji = confirm("Would you like EMOJIS in your password?")
 
     // Must pick at least one, in order to generate password
     if (!wantSymbols && !wantNum && !wantUpperLet && !wantLowerLet && !wantEmoji) {
-      alert("Must pick at least one criteria")
+      alert("Must pick at least one criteria. Try again")
     }
     // If confirmed YES/OK push variable into Password, else continue to next variable
     var password = []
