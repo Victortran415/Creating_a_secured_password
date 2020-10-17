@@ -22,10 +22,10 @@ For the application to run the User must meet some criterias:
 
 
 GitHub Page:
-  https://victortran415.github.io/Creating_a_secured_password/
+  https://victortran415.github.io/Generating_a_secured_password/
 
 Repo Page:
-  https://github.com/Victortran415/Creating_a_secured_password
+  https://github.com/Victortran415/Generating_a_secured_password
 
 Page to my screenshots:
-  https://github.com/Victortran415/Creating_a_secured_password/issues/1
+  https://github.com/Victortran415/Generating_a_secured_password/issues/1
