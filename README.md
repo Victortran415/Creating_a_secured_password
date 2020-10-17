@@ -9,13 +9,14 @@ For the application to run the User must meet some criterias:
 
     - If User click cancel or does not meet the length requirement, they will be asked to "Try again"
   
-  2. Password must have at least ONE of the characters:
+  2. Password must have at least ONE of the five characters below:
 
     - Special characters (Symbols),
     - Numbers,
     - Lowercase Letters,
     - Uppercase Letters,
-    - Emojois
+    - Emojis
+    
 
     - If User does not choose one, they will be asked to "Try again"
 
