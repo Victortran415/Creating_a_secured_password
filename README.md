@@ -28,6 +28,6 @@ Repo Page:
   https://github.com/Victortran415/Generating_a_secured_password
 
 Page to my screenshots:
-![]https://media.giphy.com/media/BiXsgbpEWGYTfkCfAg/giphy.gif
+![](https://media.giphy.com/media/BiXsgbpEWGYTfkCfAg/giphy.gif)
   https://github.com/Victortran415/Generating_a_secured_password/issues/1
   
